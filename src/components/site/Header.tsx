@@ -5,9 +5,9 @@ import flag from "@/assets/flag.png";
 
 const nav = [
   { to: "/", label: "Home" },
-  { to: "/programme-information", label: "Programme" },
-  { to: "/career-opportunities", label: "Careers" },
-  { to: "/student-experience", label: "Student Life" },
+  { to: "/programme-information", label: "Programme Information" },
+  { to: "/career-opportunities", label: "Career Opportunities" },
+  { to: "/student-experience", label: "Student Experience" },
   { to: "/contact", label: "FAQ / Contact" },
 ] as const;
 
