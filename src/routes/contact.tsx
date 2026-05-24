@@ -32,7 +32,7 @@ function Contact() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <div className="max-w-3xl text-primary-foreground">
             <span className="inline-flex items-center rounded-full border border-primary-foreground/30 bg-primary-foreground/10 px-3 py-1 text-xs font-medium uppercase tracking-wider backdrop-blur-sm transition-colors hover:bg-primary-foreground/20">FAQ / Contact</span>
-            <h1 className="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl">FAQ and Contact Information</h1>
+            <h1 className="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl">FAQ and Contact</h1>
             <div className="mt-4 h-1 w-24 rounded-full bg-gradient-accent" />
             <p className="mt-6 max-w-2xl text-primary-foreground/85 sm:text-lg">
               This section provides answers to common questions regarding the Bachelor of
