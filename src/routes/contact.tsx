@@ -38,7 +38,7 @@ function Contact() {
           <div className="lg:col-span-3">
             <h2 className="accent-bar text-2xl font-bold">Send us a message</h2>
             <form action="https://api.web3forms.com/submit" method="POST" className="mt-8 grid gap-5">
-              <input type="hidden" name="access_key" value="466e0638-e8bf-40d3-966e-709c86c52072" />
+              <input type="hidden" name="access_key" value="40e338ef-79b3-4e16-a2c7-969e8f3be73a" />
               <input type="hidden" name="_subject" value="New contact from KLUST website" />
               <input type="hidden" name="_redirect" value="https://klust-bba.pages.dev/contact" />
               <input type="text" name="_honey" style={{ display: "none" }} />
@@ -47,6 +47,19 @@ function Contact() {
                 <Field label="Email" name="email" type="email" required />
                 <Field label="Phone (optional)" name="phone" />
                 <Field label="Programme of interest" name="programme" defaultValue="Bachelor of Business Administration" />
+              </div>
+              <div>
+                <label className="mb-2 block text-sm font-medium text-foreground">Student status</label>
+                <div className="flex gap-6">
+                  <label className="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer">
+                    <input type="radio" name="student_status" value="Malaysian" defaultChecked className="h-4 w-4 text-accent" />
+                    Malaysian Student
+                  </label>
+                  <label className="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer">
+                    <input type="radio" name="student_status" value="International" className="h-4 w-4 text-accent" />
+                    International Student
+                  </label>
+                </div>
               </div>
               <div>
                 <label className="text-sm font-medium text-foreground">Message</label>
