@@ -37,10 +37,10 @@ function Contact() {
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-3">
             <h2 className="accent-bar text-2xl font-bold">Send us a message</h2>
-            <form action="https://formsubmit.co/doaagehad03@gmail.com" method="POST" className="mt-8 grid gap-5">
+            <form action="https://api.web3forms.com/submit" method="POST" className="mt-8 grid gap-5">
+              <input type="hidden" name="access_key" value="466e0638-e8bf-40d3-966e-709c86c52072" />
               <input type="hidden" name="_subject" value="New contact from KLUST website" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_next" value="https://klust-bba.pages.dev/contact" />
+              <input type="hidden" name="_redirect" value="https://klust-bba.pages.dev/contact" />
               <input type="text" name="_honey" style={{ display: "none" }} />
               <div className="grid gap-5 sm:grid-cols-2">
                 <Field label="Full name" name="full_name" required />
