@@ -37,7 +37,7 @@ function Contact() {
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-3">
             <h2 className="accent-bar text-2xl font-bold">Send us a message</h2>
-            <form action="https://formsubmit.co/benbeekman97@gmail.com" method="POST" className="mt-8 grid gap-5">
+            <form action="https://formsubmit.co/doaagehad03@gmail.com" method="POST" className="mt-8 grid gap-5">
               <input type="hidden" name="_subject" value="New contact from KLUST website" />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_next" value="https://klust-bba.pages.dev/contact" />
