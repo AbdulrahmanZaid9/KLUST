@@ -1,103 +1,153 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/PageHero";
-import { CheckCircle2 } from "lucide-react";
-import students from "@/assets/students-collaborating.jpg";
+import { BookOpen, Users, Briefcase, Laptop } from "lucide-react";
+import progInfoTop from "@/assets/prog-info-top.jpg";
+import programmeOverview from "@/assets/programme-overview.png";
+import entryRequirements from "@/assets/entry-requirements.jpg";
+import programmeDuration from "@/assets/programme-duration.jpg";
+import skillsGained from "@/assets/skills-gained.jpg";
 
 export const Route = createFileRoute("/programme-information")({
   head: () => ({
     meta: [
       { title: "Programme Information — BBA at KLUST" },
-      { name: "description", content: "Programme structure, subjects offered, admission requirements and study duration for the BBA at KLUST." },
+      { name: "description", content: "Programme structure, subjects, admission requirements, and study duration for the BBA at KLUST." },
       { property: "og:title", content: "Programme Information — BBA at KLUST" },
-      { property: "og:description", content: "Structure, subjects, admissions, duration and credits for the KLUST BBA." },
+      { property: "og:description", content: "Learn about the BBA programme at KLUST." },
     ],
   }),
   component: ProgrammeInfo,
 });
-
-const year1 = ["Principles of Management", "Microeconomics", "Business Mathematics", "Fundamentals of Accounting", "Business Communication", "Introduction to Marketing"];
-const year2 = ["Organisational Behaviour", "Macroeconomics", "Financial Management", "Human Resource Management", "Operations Management", "Business Law"];
-const year3 = ["Strategic Management", "International Business", "Entrepreneurship", "Business Research Methods", "Marketing Strategy", "Industrial Training / Final Project"];
 
 function ProgrammeInfo() {
   return (
     <>
       <PageHero
         eyebrow="Programme Information"
-        title="A structured path to business mastery"
-        description="Three years. 120 credits. A curriculum that blends core business fundamentals with specialised electives and real-world practice."
-        image={students}
+        title="Bachelor of Business Administration"
+        description="Programme structure, subjects offered, admission requirements, and study duration at Kuala Lumpur University of Science and Technology (KLUST)."
+        image={progInfoTop}
       />
 
       <Section>
-        <div className="grid gap-12 lg:grid-cols-3">
-          <div className="lg:col-span-1">
-            <h2 className="accent-bar text-2xl font-bold">Quick Facts</h2>
-            <dl className="mt-6 space-y-4 text-sm">
-              {[
-                ["Intakes", "March, June and October"],
-                ["Mode of Study", "Full Time"],
-                ["Duration", "3 Years"],
-                ["Credits", "120"],
-                ["Level of Study", "Undergraduate"],
-                ["Faculty", "Faculty of Business, Information and Human Sciences (FBIHS)"],
-                ["Field of Study", "Business Administration"],
-              ].map(([k, v]) => (
-                <div key={k} className="rounded-lg border border-border bg-card p-4">
-                  <dt className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{k}</dt>
-                  <dd className="mt-1 font-semibold text-foreground">{v}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-
-          <div className="lg:col-span-2">
-            <h2 className="accent-bar text-2xl font-bold">Programme Structure</h2>
-            <p className="mt-4 text-muted-foreground">
-              The programme is delivered across three full-time years, organised around core
-              business knowledge in Year 1, applied management in Year 2, and strategic
-              specialisation plus industry training in Year 3.
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div>
+            <h2 className="accent-bar text-3xl font-bold">Programme Overview</h2>
+            <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+              The Bachelor of Business Administration programme at Kuala Lumpur University
+              of Science and Technology (KLUST) is designed to provide students with
+              knowledge and practical skills in management, marketing, entrepreneurship,
+              finance, and human resource management.
             </p>
-
-            <div className="mt-8 space-y-6">
-              {[
-                { year: "Year 1 — Foundations", list: year1 },
-                { year: "Year 2 — Applied Management", list: year2 },
-                { year: "Year 3 — Strategy & Industry", list: year3 },
-              ].map((y) => (
-                <div key={y.year} className="rounded-xl border border-border bg-card p-6 shadow-card">
-                  <h3 className="text-lg font-semibold text-foreground">{y.year}</h3>
-                  <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-                    {y.list.map((s) => (
-                      <li key={s} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" /> {s}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              The programme helps students develop leadership, communication, teamwork,
+              and problem-solving skills required in the business industry.
+            </p>
+          </div>
+          <div>
+            <img
+              src={programmeOverview}
+              alt="Programme overview"
+              loading="lazy"
+              className="aspect-[4/3] w-full rounded-xl object-cover shadow-elegant"
+            />
           </div>
         </div>
       </Section>
 
       <section className="bg-secondary/60 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="accent-bar text-2xl font-bold">Admission Requirements</h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {[
-              { t: "STPM / A-Level", d: "Minimum 2 principal passes (Grade C) in any subjects, plus SPM credit in Mathematics and English." },
-              { t: "UEC", d: "Minimum 5 Grade B passes including Mathematics and English." },
-              { t: "Foundation / Diploma", d: "Recognised Foundation with CGPA >= 2.00, or relevant Diploma with CGPA >= 2.50." },
-            ].map((r) => (
-              <div key={r.t} className="rounded-xl border border-border bg-card p-6 shadow-card">
-                <h3 className="text-lg font-semibold text-foreground">{r.t}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{r.d}</p>
-              </div>
-            ))}
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="order-2 lg:order-1">
+              <img
+                src={entryRequirements}
+                alt="Entry requirements"
+                loading="lazy"
+                className="aspect-[4/3] w-full rounded-xl object-cover shadow-elegant"
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <h2 className="accent-bar text-3xl font-bold">Entry Requirements</h2>
+              <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+                Applicants are generally required to possess qualifications such as STPM,
+                diploma, foundation, matriculation, or other equivalent qualifications
+                approved by Kuala Lumpur University of Science and Technology (KLUST).
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                Applicants may also be required to meet the English language requirements
+                set by the university.
+              </p>
+            </div>
           </div>
         </div>
       </section>
+
+      <Section>
+        <h2 className="accent-bar text-3xl font-bold">Course Structure / Subjects</h2>
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            { icon: BookOpen, title: "Core Subjects", desc: "Core subjects provide students with fundamental business knowledge and skills in areas such as management, communication, leadership, and business operations." },
+            { icon: Briefcase, title: "Major Subjects", desc: "Major subjects in management, marketing, entrepreneurship, finance, and human resource management help students develop specialized knowledge." },
+            { icon: Users, title: "Free Electives", desc: "Free elective subjects provide opportunities for students to broaden their academic knowledge and develop additional soft skills outside their main field of study." },
+            { icon: Laptop, title: "Industrial Training", desc: "Industrial training allows students to gain practical working experience and apply their business knowledge in a real workplace environment." },
+          ].map((c) => (
+            <div key={c.title} className="rounded-xl border border-border bg-card p-6 shadow-card">
+              <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/5 text-primary">
+                <c.icon className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold text-foreground">{c.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <section className="bg-secondary/60 py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <h2 className="accent-bar text-3xl font-bold">Programme Duration</h2>
+              <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+                The Bachelor of Business Administration programme is designed to be
+                completed within approximately 3 years of full-time study.
+              </p>
+            </div>
+            <div>
+              <img
+                src={programmeDuration}
+                alt="Programme duration"
+                loading="lazy"
+                className="aspect-[4/3] w-full rounded-xl object-cover shadow-elegant"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Section>
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div className="order-2 lg:order-1">
+            <img
+              src={skillsGained}
+              alt="Skills gained"
+              loading="lazy"
+              className="aspect-[4/3] w-full rounded-xl object-cover shadow-elegant"
+            />
+          </div>
+          <div className="order-1 lg:order-2">
+            <h2 className="accent-bar text-3xl font-bold">Skills Gained</h2>
+            <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+              Students will develop communication, leadership, teamwork, analytical
+              thinking, and problem-solving skills throughout the programme.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              The Bachelor of Business Administration programme at KLUST prepares
+              students with both academic knowledge and practical skills needed for
+              future careers in the business industry.
+            </p>
+          </div>
+        </div>
+      </Section>
     </>
   );
 }
