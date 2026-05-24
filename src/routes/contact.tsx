@@ -1,10 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/PageHero";
-import { useState } from "react";
-import { useServerFn } from "@tanstack/react-start";
-import { submitContact } from "@/lib/contact.functions";
-import { toast } from "sonner";
-import { Mail, MapPin, Phone, Loader2, Instagram } from "lucide-react";
+import { Mail, MapPin, Phone, Instagram } from "lucide-react";
 import campus from "@/assets/hero-campus.jpg";
 
 export const Route = createFileRoute("/contact")({
@@ -27,36 +23,6 @@ const faqs = [
 ];
 
 function Contact() {
-  const submit = useServerFn(submitContact);
-  const [pending, setPending] = useState(false);
-
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const fd = new FormData(form);
-    const data = {
-      full_name: String(fd.get("full_name") || ""),
-      email: String(fd.get("email") || ""),
-      phone: String(fd.get("phone") || ""),
-      programme: String(fd.get("programme") || ""),
-      message: String(fd.get("message") || ""),
-    };
-    setPending(true);
-    try {
-      const res = await submit({ data });
-      if (res.ok) {
-        toast.success("Thanks! We'll be in touch soon.");
-        form.reset();
-      } else {
-        toast.error(res.error);
-      }
-    } catch (err) {
-      console.error(err);
-      toast.error("Please check your entries and try again.");
-    } finally {
-      setPending(false);
-    }
-  }
 
   return (
     <>
@@ -71,7 +37,11 @@ function Contact() {
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-3">
             <h2 className="accent-bar text-2xl font-bold">Send us a message</h2>
-            <form onSubmit={onSubmit} className="mt-8 grid gap-5">
+            <form action="https://formsubmit.co/benbeekman97@gmail.com" method="POST" className="mt-8 grid gap-5">
+              <input type="hidden" name="_subject" value="New contact from KLUST website" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_next" value="https://klust-bba.pages.dev/contact" />
+              <input type="text" name="_honey" style={{ display: "none" }} />
               <div className="grid gap-5 sm:grid-cols-2">
                 <Field label="Full name" name="full_name" required />
                 <Field label="Email" name="email" type="email" required />
@@ -82,9 +52,8 @@ function Contact() {
                 <label className="text-sm font-medium text-foreground">Message</label>
                 <textarea name="message" required minLength={10} rows={5} className="mt-2 w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm outline-none ring-ring/30 focus:ring-2" />
               </div>
-              <button type="submit" disabled={pending} className="inline-flex items-center justify-center gap-2 self-start rounded-md bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-elegant transition-transform hover:scale-[1.02] disabled:opacity-60">
-                {pending && <Loader2 className="h-4 w-4 animate-spin" />}
-                {pending ? "Sending..." : "Send Message"}
+              <button type="submit" className="inline-flex items-center justify-center gap-2 self-start rounded-md bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-elegant transition-transform hover:scale-[1.02]">
+                Send Message
               </button>
             </form>
           </div>
