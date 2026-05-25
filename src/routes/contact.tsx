@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section } from "@/components/site/PageHero";
 import { Mail, MapPin, Phone, Instagram, ArrowRight, ChevronRight } from "lucide-react";
 import faqTop from "@/assets/faq-top.jpg";
@@ -121,7 +121,13 @@ function Contact() {
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary-foreground/10 backdrop-blur">
                     <MapPin className="h-4 w-4 text-accent" />
                   </span>
-                  Kuala Lumpur University of Science and Technology, Kuala Lumpur, Malaysia
+                  <a href="https://maps.app.goo.gl/gu5db1PYc7QrND4v9" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 transition-colors hover:text-accent">
+                    Kuala Lumpur University of Science and Technology<br />
+                    Block 11, Kuala Lumpur University of Science and Technology,<br />
+                    De Centrum City, Jalan Ikram-Uniten,<br />
+                    43000 Kajang, Selangor Darul Ehsan,<br />
+                    Malaysia.
+                  </a>
                 </li>
                 <li className="flex items-center gap-3 transition-transform duration-200 hover:translate-x-1">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary-foreground/10 backdrop-blur">
@@ -262,9 +268,9 @@ function Contact() {
             opportunities for your academic and professional future at KLUST.
           </p>
           <div className="mt-8 flex justify-center gap-3">
-            <a href="https://klust-bba.pages.dev" className="group/btn inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-elegant transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-accent/30 active:scale-[0.98]">
+            <Link to="/programme-information" className="group/btn inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-elegant transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-accent/30 active:scale-[0.98]">
               Learn More <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>

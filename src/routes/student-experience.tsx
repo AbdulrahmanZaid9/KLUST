@@ -254,7 +254,7 @@ function StudentLife() {
             <ImageWithGlow src={personalExperience} alt="Personal experience" />
           </div>
           <div className="order-1 lg:order-2">
-            <h2 className="accent-bar text-3xl font-bold">4. Personal Experience &amp; Tips for New Students</h2>
+            <h2 className="accent-bar text-3xl font-bold">4. Students Experience</h2>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground">
               Studying at KLUST helps students become more confident, independent, and
               responsible throughout their university journey. Through presentations, group

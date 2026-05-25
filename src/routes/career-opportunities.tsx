@@ -96,9 +96,10 @@ function Careers() {
               { img: financeBanking, title: "Finance and Banking", desc: "Finance and banking careers involve financial planning, budgeting, investment management, and banking operations within organizations and financial institutions.", icon: Wallet },
               { img: islamicFinance, title: "Islamic Finance and Banking", desc: "Islamic finance and banking focus on Shariah-compliant financial services, Islamic banking operations, and ethical financial management practices.", icon: Landmark },
             ].map((c, i) => {
+              const animationDelay = `${i * 150}ms`;
               const Icon = c.icon;
               return (
-                <div key={c.title} className="group relative">
+                <div key={c.title} className="group relative animate-in fade-in slide-in-from-bottom-6 animation-duration-700 fill-mode-forwards" style={{ animationDelay }}>
                   <div className="pointer-events-none absolute -inset-x-6 -inset-y-4 rounded-2xl bg-card opacity-0 shadow-card transition-all duration-500 group-hover:opacity-100" aria-hidden="true" />
                   <div className={`relative grid gap-8 lg:grid-cols-2 lg:items-center ${i % 2 === 1 ? "lg:grid-flow-dense" : ""}`}>
                     <div className={i % 2 === 1 ? "lg:col-start-2" : ""}>
